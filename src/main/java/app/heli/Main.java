@@ -25,8 +25,6 @@ public final class Main {
     }
 
     static WebServer startServer(int port) {
-        // Keep Helidon's service-provider interface reachable in GraalVM Native Image.
-        var serverFeatureProviderType = io.helidon.webserver.spi.ServerFeatureProvider.class;
         return WebServer.builder()
                 .port(port)
                 .routing(routing -> routing.get("/", (request, response) -> response.send("Hello World!")))
