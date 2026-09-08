@@ -1,0 +1,8 @@
+[
+  {
+    "name": "io.helidon.webserver.spi.ServerFeatureProvider",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true,
+    "allDeclaredFields": true
+  }
+]
