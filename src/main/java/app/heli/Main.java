@@ -1,4 +1,4 @@
-package com.example;
+package app.heli;
 
 import io.helidon.webserver.WebServer;
 import io.helidon.service.registry.GlobalServiceRegistry;

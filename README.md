@@ -24,7 +24,7 @@ Hello World!
 
 ```bash
 ./gradlew nativeCompile
-./build/native/nativeCompile/helidon-hello
+./build/native/nativeCompile/heli
 ```
 
 ## Test
