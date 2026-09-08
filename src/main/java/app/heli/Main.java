@@ -5,7 +5,6 @@ import io.helidon.service.registry.GlobalServiceRegistry;
 import io.helidon.service.registry.ServiceRegistryConfig;
 import io.helidon.service.registry.ServiceRegistryManager;
 
-/** Starts a minimal Helidon SE web server. */
 public final class Main {
     static {
         var registryConfig = ServiceRegistryConfig.builder()
@@ -21,13 +20,13 @@ public final class Main {
     public static void main(String[] args) {
         var port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
         var server = startServer(port);
-        System.out.printf("Helidon SE is listening on http://localhost:%d/%n", server.port());
+        IO.println("Helidon SE is listening on http://localhost:" + server.port() + "/");
     }
 
     static WebServer startServer(int port) {
         return WebServer.builder()
                 .port(port)
-                .routing(routing -> routing.get("/", (request, response) -> response.send("Hello World!")))
+                .routing(Routes::configure)
                 .build()
                 .start();
     }
