@@ -24,9 +24,11 @@ public final class Main {
     }
 
     static WebServer startServer(int port) {
+        var routes = new Routes();
+
         return WebServer.builder()
                 .port(port)
-                .routing(Routes::configure)
+                .routing(routes::configure)
                 .build()
                 .start();
     }
